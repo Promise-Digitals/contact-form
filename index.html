@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact Form</title>
+</head>
+<body>
+    <div class="container">
+        <img src="images/logo 1.png" class="logo">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h3>CONTACT US</h3>
+            <input type="text" name="" id="text" placeholder="Your Name" required>
+            <input type="email" name="" id="email" placeholder="Enter Your Email Address" required>
+            <input type="number" name="" id="phone" placeholder="Phone no." required>
+            <textarea name="" id="message" rows="5" placeholder="How can we help you?" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <footer>
+            <p>PROMISE DIGITALS</p>
+        </footer>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "promiseedeh025@gmail.com",
+                Password: "F6FB47C437AFC965B598FE3B08366660202C",
+                To: 'edehibuchukwu2@gmail.com',
+                From: document.getElementById('email').value,
+                Subject: "New Content Form Equiry",
+                Body: "Name: " + document.getElementById('text').value
+                    + '<br> Email: ' + document.getElementById('email').value
+                    + '<br> Phone no: ' + document.getElementById('phone').value
+                    + '<br> Message: ' + document.getElementById('message').value
+            }).then(
+            message => alert("Message Sent Successfully")
+            );
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.logo{
+    width: 150px;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+form{
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    padding: 2vw 4vw;
+    border-radius: 10px;
+    box-shadow: 2px 3px 10px #000;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+}
+form:hover{
+    box-shadow: none;
+}
+form h3{
+    margin-bottom: 30px;
+    font-weight: 800;
+    color: #555;
+}
+form input, form textarea{
+    padding: 20px;
+    border: none;
+    outline: none;
+    background: #f5f5f5;
+    margin-bottom: 10px;
+    font-size: 16px;
+    box-shadow: 0.5px 0.5px 2px #555;
+}
+form input, form textarea::placeholder{
+    font-size: 14px;
+}
+form button{
+    padding: 15px;
+    color: #fff;
+    background: #ff004f;
+    outline: none;
+    border-radius: 30px;
+    width: 160px;
+    margin: 30px auto;
+    border: none;
+    font-size: 16px;
+    box-shadow: 1px 2px 5px #555;
+    transition: 0.5s;
+    cursor: pointer;
+}
+form button:hover{
+    box-shadow: none;
+}
+footer{
+    position: absolute;
+    bottom: 3%;
+    left: 2%;
+}
+footer p{
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+}
+footer p::after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: #000;
+    border-left: 2px solid #ff004f;
+    left: 0%;
+    animation: slide 3s steps(16) infinite;
+}
+@keyframes slide{
+    100%{
+        left: calc(100% + 15px);
+    }
+}
